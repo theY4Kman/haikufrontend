@@ -1,0 +1,53 @@
+html {
+  background-color: #808B46;
+  -moz-background-size: 80px 80px;
+  -webkit-background-size: 80px 80px;
+  -o-background-size: 80px 80px;
+  background-size: 80px 80px;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(25%, rgba(0, 0, 0, 0.1)), color-stop(25%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(75%, rgba(0, 0, 0, 0.1)), color-stop(75%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -moz-linear-gradient(left top, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(left top, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+  color: #2B310C;
+  font-family: sans-serif;
+}
+body { margin: 5em; }
+
+.small-stripes {
+  -moz-background-size: 25px 25px;
+  -webkit-background-size: 25px 25px;
+  -o-background-size: 25px 25px;
+  background-size: 25px 25px;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(25%, rgba(0, 0, 0, 0.1)), color-stop(25%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(75%, rgba(0, 0, 0, 0.1)), color-stop(75%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -moz-linear-gradient(left top, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(left top, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+}
+.inner-shadow {
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 1em 0.3em inset, rgba(255, 255, 255, 0.3) 0 1px, rgba(0, 0, 0, 0.3) 0 -1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 1em 0.3em inset, rgba(255, 255, 255, 0.3) 0 1px, rgba(0, 0, 0, 0.3) 0 -1px;
+  -o-box-shadow: rgba(0, 0, 0, 0.4) 0 0 1em 0.3em inset, rgba(255, 255, 255, 0.3) 0 1px, rgba(0, 0, 0, 0.3) 0 -1px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 1em 0.3em inset, rgba(255, 255, 255, 0.3) 0 1px, rgba(0, 0, 0, 0.3) 0 -1px;
+}
+
+div#content {
+  margin: auto;
+  width: 40em;
+}
+div#topic-ask {
+  background-color: #EBFF8A;
+  border: 0.5em solid #92A72A;
+  padding: 0.8em;
+  text-align: center;
+}
+div#topic-ask > form > input {
+  background-color: #F6FFCC;
+  font-size: 1.5em;
+  margin-left: 0.1em;
+  padding: 0.2em;
+  width: 15em;
+}
+div#topic-ask > form > label {
+  color: #9AAF2C;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: #819325 -1px 1px 0, #485214 -2px 2px 0, #2B310C -3px 3px 0;
+}
