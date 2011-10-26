@@ -31,7 +31,7 @@ body, div, span, p {
 }
 .text-shadow {
   color: #7D8F24;
-  text-shadow: #819325 -1px 1px 0, #485214 -2px 2px 0, #2B310C -3px 3px 0;
+  text-shadow: #819325 0px 1px 0, #485214 0px 2px 0, #2B310C 0px 3px 0;
 }
 
 div#content {
