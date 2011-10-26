@@ -3,19 +3,53 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>Haiku Frontend</title>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="static/css/ui-lightness/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="static/css/screen.css" type="text/css" media="screen" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <script type="text/javascript" src="static/js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript">
+      $(function()
+        {
+          $('#progress-bar').progressbar({ value: 20 });
+
+          $('#topic').keypress(function(evt)
+          {
+            if (evt.keyCode != 13)
+              return true;
+
+            if ($(this).val().length == 0)
+            {
+              $(this).effect('highlight', { color: '#FF9999' });
+              return false;
+            }
+
+            window.topic = $(this).val();
+            $('#topic-ask').hide('drop', function()
+            {
+              $('#loading').show('drop');
+            });
+            
+            return false;
+          });
+          $('form').submit(function() { return false; });
+        });
+    </script>
   </head>
   <body>
     <div id="content">
-        <div id="topic-ask" class="ui-corner-all small-stripes inner-shadow">
-            <form action="#">
-                <label for="topic">Haiku Topic:</label>
-                <input type="text" name="topic" id="topic" />
-            </form>
+      <div id="topic-ask" class="ui-corner-all small-stripes inner-shadow content_div">
+        <form action="#">
+          <label for="topic" class="text-shadow">Haiku Topic:</label>
+          <input type="text" name="topic" id="topic" />
+        </form>
+      </div>
+      <div id="loading" class="ui-corner-all small-stripes inner-shadow content_div" style="display: none;">
+        <div id="progress-bar">
+          <span id="progress-text" class="text-shadow">Reticulating splines...</span>
         </div>
+      </div>
     </div>
   </body>
 </html>

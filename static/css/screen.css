@@ -7,10 +7,12 @@ html {
   background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(25%, rgba(0, 0, 0, 0.1)), color-stop(25%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0.1)), color-stop(75%, rgba(0, 0, 0, 0.1)), color-stop(75%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
   background-image: -moz-linear-gradient(left top, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
   background-image: linear-gradient(left top, rgba(0, 0, 0, 0.1) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
-  color: #2B310C;
-  font-family: sans-serif;
 }
 body { margin: 5em; }
+body, div, span, p {
+  color: #2B310C;
+  font-family: 'Droid Sans', sans-serif;
+}
 
 .small-stripes {
   -moz-background-size: 25px 25px;
@@ -27,12 +29,16 @@ body { margin: 5em; }
   -o-box-shadow: rgba(0, 0, 0, 0.4) 0 0 1em 0.3em inset, rgba(255, 255, 255, 0.3) 0 1px, rgba(0, 0, 0, 0.3) 0 -1px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 0 1em 0.3em inset, rgba(255, 255, 255, 0.3) 0 1px, rgba(0, 0, 0, 0.3) 0 -1px;
 }
+.text-shadow {
+  color: #7D8F24;
+  text-shadow: #819325 -1px 1px 0, #485214 -2px 2px 0, #2B310C -3px 3px 0;
+}
 
 div#content {
   margin: auto;
   width: 40em;
 }
-div#topic-ask {
+div.content_div {
   background-color: #EBFF8A;
   border: 0.5em solid #92A72A;
   padding: 0.8em;
@@ -43,11 +49,24 @@ div#topic-ask > form > input {
   font-size: 1.5em;
   margin-left: 0.1em;
   padding: 0.2em;
+  text-align: center;
+  text-shadow: #277000 -1px 1px 0;
   width: 15em;
 }
 div#topic-ask > form > label {
-  color: #9AAF2C;
-  font-size: 1.2em;
+  font-size: 1.6em;
   font-weight: bold;
-  text-shadow: #819325 -1px 1px 0, #485214 -2px 2px 0, #2B310C -3px 3px 0;
+  letter-spacing: 1px;
+  vertical-align: text-bottom;
+}
+.ui-progressbar {
+  background: #C5D66B none;
+  position: relative;
+}
+span#progress-text {
+  font-weight: bold;
+  line-height: 1.9em;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
