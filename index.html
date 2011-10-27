@@ -12,7 +12,7 @@
     <script type="text/javascript">
       $(function()
         {
-          $('#progress-bar').progressbar({ value: 20 });
+          $('#progress-bar').progressbar({ value: 0 });
 
           $('#topic').keypress(function(evt)
           {
@@ -28,12 +28,57 @@
             window.topic = $(this).val();
             $('#topic-ask').hide('drop', function()
             {
-              $('#loading').show('drop');
+              $('#loading').show('drop', function()
+                {
+                  var timer = window.setInterval(function()
+                    {
+                      var value = $('#progress-bar').progressbar('value');
+                      if (value > 40 && $('#email-ask').is(':hidden'))
+                        $('#email-ask').show('drop');
+
+                      if (value == 100)
+                      {
+                        window.clearInterval(timer);
+                        $('#loading').hide('drop');
+                        $('#email-ask').hide('drop', function()
+                          {
+                            $('#haiku').show('drop');
+                          });
+                      }
+
+                      $('#progress-bar').progressbar('option', 'value', value + 10)
+                    }, 1250);
+                });
             });
             
             return false;
           });
           $('form').submit(function() { return false; });
+
+          $('[placeholder]').focus(function()
+            {
+              var input = $(this);
+              if (input.val() == input.attr('placeholder')) {
+                input.val('');
+                input.removeClass('placeholder');
+              }
+            }).blur(function()
+            {
+              var input = $(this);
+              if (input.val() == '' || input.val() == input.attr('placeholder')) {
+                input.addClass('placeholder');
+                input.val(input.attr('placeholder'));
+              }
+            }).blur();
+          $('[placeholder]').parents('form').submit(function()
+            {
+              $(this).find('[placeholder]').each(function() {
+                var input = $(this);
+                if (input.val() == input.attr('placeholder')) {
+                  input.val('');
+                }
+              })
+            });
         });
     </script>
   </head>
@@ -48,6 +93,24 @@
       <div id="loading" class="ui-corner-all small-stripes inner-shadow content_div" style="display: none;">
         <div id="progress-bar">
           <span id="progress-text" class="text-shadow">Reticulating splines...</span>
+        </div>
+      </div>
+      <div id="email-ask" class="ui-corner-top small-stripes inner-shadow content_div" style="display: none;">
+        <form action="#">
+          <label for="email" class="text-shadow">Taking too long?</label>
+          <input type="text" name="email" id="email" placeholder="Enter your email address and we'll notify you." />
+        </form>
+      </div>
+      <div id="haiku" class="ui-corner-all small-stripes inner-shadow content_div" style="display: none;">
+        <div id="haiku-header">
+          <h2 id="haiku-title" class="text-shadow">Concept of America</h2>
+          <div class="separator ui-corner-all" id="title-topic-separator"> </div>
+          <h3 id="haiku-topic">America</h3>
+        </div>
+        <div id="haiku-body">
+          People united<br />
+          To secure their liberty<br />
+          Out of many, one<br />
         </div>
       </div>
     </div>

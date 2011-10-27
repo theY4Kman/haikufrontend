@@ -12,6 +12,14 @@ body { margin: 5em; }
 body, div, span, p {
   color: #2B310C;
   font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+}
+input[type=text] {
+  background-color: #F6FFCC;
+  font-size: 1.5em;
+  padding: 0.2em;
+  text-align: center;
+  text-shadow: #277000 -1px 1px 0;
 }
 
 .small-stripes {
@@ -33,6 +41,13 @@ body, div, span, p {
   color: #2F350D;
   text-shadow: #819325 -2px 2px 0, #819325 0 2px 0, #819325 2px 2px 0, #819325 -2px 0 0, #819325 0 0 0, #819325 2px 0 0, #819325 -2px -2px 0, #819325 0 -2px 0, #819325 2px -2px 0;
 }
+.placeholder { color: #aaa; }
+.separator {
+  background-color: #64731C;
+  border-color: #64731C;
+  height: 3px;
+  opacity: 0.5;
+}
 
 div#content {
   margin: auto;
@@ -45,12 +60,7 @@ div.content_div {
   text-align: center;
 }
 div#topic-ask > form > input {
-  background-color: #F6FFCC;
-  font-size: 1.5em;
   margin-left: 0.1em;
-  padding: 0.2em;
-  text-align: center;
-  text-shadow: #277000 -1px 1px 0;
   width: 15em;
 }
 div#topic-ask > form > label {
@@ -59,6 +69,7 @@ div#topic-ask > form > label {
   letter-spacing: 1px;
   vertical-align: text-bottom;
 }
+
 .ui-progressbar {
   background: #C5D66B none;
   position: relative;
@@ -69,4 +80,21 @@ span#progress-text {
   position: absolute;
   text-align: center;
   width: 100%;
+}
+
+div#email-ask { margin-top: 1em; }
+div#email-ask > form > label { font-size: 1.2em; }
+div#email-ask > form > input {
+  font-size: 1.1em;
+  margin-left: 0.1em;
+  width: 23em;
+}
+
+#haiku-title {
+  margin: 0 0 0.2em;
+  padding-bottom: 0.2em;
+}
+#haiku-topic {
+  margin-top: 0.2em;
+  opacity: 0.8;
 }
